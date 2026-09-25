@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <Link to={`${ROUTES.home}#top`} className="logo">
-              <img src="/Logo.png" alt="LeaseOps" />
+              <img src="/Logo.png" alt="Simplr" />
             </Link>
             <p>
               Leasops answers, qualifies, and books tours for every rental inquiry, day or night, so residential
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 LeaseOps | All Rights Reserved</span>
+          <span>© 2026 Simplr | All Rights Reserved</span>
           <span className="made">
             Created by <strong>Sliding Scale Technologies</strong>
           </span>

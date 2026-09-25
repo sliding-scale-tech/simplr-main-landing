@@ -15,9 +15,18 @@ export const SECTIONS = [
 
 export const CONTACT_EMAIL = 'Faarid@slidingscale.xyz'
 
+// The real Simplr product's own auth pages (confirmed live at simplr.pro).
+export const EXTERNAL = {
+  signIn: 'https://www.simplr.pro/sign-in',
+  signUp: 'https://www.simplr.pro/sign-up',
+}
+
 export const SITE = {
-  title: 'LeaseOps | Revenue Operations for Property Managers',
+  title: 'Simplr | Revenue Operations for Property Managers',
   description:
-    'LeaseOps answers, qualifies, and books tours for every rental inquiry, day or night, so residential property managers never lose a lead to a missed call.',
-  url: 'https://leaseops.slidingscale.xyz/',
+    'Simplr answers, qualifies, and books tours for every rental inquiry, day or night, so residential property managers never lose a lead to a missed call.',
+  // Placeholder domain, same pattern as the original (a slidingscale.xyz subdomain) — NOT
+  // simplr.pro itself, which is a separate, already-live site this deploy doesn't own. Update
+  // once the real production domain for this rebrand is known.
+  url: 'https://simplr.slidingscale.xyz/',
 }

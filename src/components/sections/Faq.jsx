@@ -2,9 +2,9 @@ const FAQ_ITEMS = [
   {
     id: '1',
     open: true,
-    question: 'What is LeaseOps?',
+    question: 'What is Simplr?',
     answer:
-      "Leaseops is a done for you leasing operations service for residential property management companies, not software you have to run yourself. We answer, qualify, and schedule tours for every rental inquiry around the clock, with a live dashboard so you always see exactly what's happening with every lead.",
+      "Simplr is a done for you leasing operations service for residential property management companies, not software you have to run yourself. We answer, qualify, and schedule tours for every rental inquiry around the clock, with a live dashboard so you always see exactly what's happening with every lead.",
   },
   {
     id: '2',
@@ -46,7 +46,7 @@ const FAQ_ITEMS = [
 function FaqItem({ item }) {
   return (
     <div className={`faq-item${item.open ? ' open' : ''}`} data-faq={item.id}>
-      <button className="faq-header">
+      <button className="faq-header" type="button">
         {/* h3, not h4 (a11y fix, perf agent): the section heading above is an h2 ("Everything you
             need to know"), so FAQ questions at h4 skip a level (Lighthouse "heading-order"
             violation). Tag changed only; identical styling is restored via a mirrored

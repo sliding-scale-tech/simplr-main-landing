@@ -34,7 +34,7 @@ export default function Everyone() {
         <div className="acc-list reveal" id="accList">
           {ACC_ITEMS.map((item) => (
             <div className="acc-item" data-acc={item.step} key={item.step}>
-              <button className="acc-header">
+              <button className="acc-header" type="button">
                 <span className="acc-num">{item.num}</span>
                 <h3>{item.title}</h3>
                 <span className="acc-plus"><svg viewBox="0 0 24 24"><use href="#ic-plus"/></svg></span>

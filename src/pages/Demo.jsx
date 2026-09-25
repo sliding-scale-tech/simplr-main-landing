@@ -49,7 +49,7 @@ export default function Demo() {
   const startBtnRef = useRef(null)
 
   useEffect(() => {
-    document.title = 'LeaseOps call demo'
+    document.title = 'Simplr call demo'
   }, [])
 
   useEffect(() => {
@@ -191,13 +191,13 @@ export default function Demo() {
         <div className="eyebrow">
           <span className="eyebrow-dot"></span> Live after hours leasing demo
         </div>
-        <h1>Watch LeaseOps answer a renter call</h1>
+        <h1>Watch Simplr answer a renter call</h1>
         <p className="hero-copy">
-          A calm, realistic walkthrough of how LeaseOps answers, qualifies, and books a tour while
+          A calm, realistic walkthrough of how Simplr answers, qualifies, and books a tour while
           your leasing team is offline.
         </p>
         <div className="cdw-controls hero-controls">
-          <button className="cdw-start-btn" id="cdwStartBtn" ref={startBtnRef}>
+          <button className="cdw-start-btn" id="cdwStartBtn" type="button" ref={startBtnRef}>
             ▶ Watch it answer a call
           </button>
         </div>
@@ -241,7 +241,7 @@ export default function Demo() {
               <div className="cdw-transcript" id="cdwTranscript" ref={transcriptRef}>
                 <div className="empty-state">
                   <strong>Ready to answer the next call</strong>
-                  Press play to hear LeaseOps qualify the renter, capture the details, and book the
+                  Press play to hear Simplr qualify the renter, capture the details, and book the
                   tour.
                 </div>
               </div>

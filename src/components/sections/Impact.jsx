@@ -11,7 +11,7 @@ export default function Impact() {
 
         <div className="impact-grid reveal">
           <div className="impact-card-left">
-            <div className="mini-logo"><img src="/Logo.png" alt="LeaseOps" /></div>
+            <div className="mini-logo"><img src="/Logo.png" alt="Simplr" /></div>
             <h3>Never let a lead go cold</h3>
             <p>Every call and text gets answered the moment it comes in, day or night.</p>
             <span className="tagline">No more voicemails nobody hears until Monday.</span>

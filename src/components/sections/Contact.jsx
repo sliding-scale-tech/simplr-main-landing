@@ -40,7 +40,7 @@ export default function Contact() {
             <div className="contact-copy">
               <h3>Tell us what you're building</h3>
               <p>
-                Share a few details and the LeaseOps team will point you toward the fastest way to recover leads, qualify
+                Share a few details and the Simplr team will point you toward the fastest way to recover leads, qualify
                 renters, and book more tours.
               </p>
               <div className="contact-email-block">

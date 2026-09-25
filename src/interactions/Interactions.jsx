@@ -261,7 +261,7 @@ export default function Interactions() {
         body: JSON.stringify({
           name,
           email,
-          _subject: 'LeaseOps contact: ' + subject,
+          _subject: 'Simplr contact: ' + subject,
           subject,
           message,
           _template: 'table',
@@ -275,7 +275,7 @@ export default function Interactions() {
           form.reset()
         })
         .catch(() => {
-          // Fallback: open the visitor's mail client addressed to the LeaseOps inbox
+          // Fallback: open the visitor's mail client addressed to the Simplr inbox
           const body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message
           const mailto =
             'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body)

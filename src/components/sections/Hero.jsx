@@ -1,3 +1,5 @@
+import { EXTERNAL } from '../../config/site'
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -11,7 +13,7 @@ export default function Hero() {
         <h1 className="reveal">Every after hours call you miss is a signed lease you lost</h1>
         <p className="lead reveal delay-1">Answer, qualify, and book around the clock, so no lead goes cold just because it came in out of hours.</p>
         <div className="hero-ctas reveal delay-2">
-          <a href="demo.html" className="btn btn-outline">Try Demo</a>
+          <a href={EXTERNAL.signIn} target="_blank" rel="noopener" className="btn btn-outline">Try Demo</a>
           <a href="#contact" className="btn btn-black">Book a Call</a>
         </div>
       </div>
@@ -28,7 +30,7 @@ export default function Hero() {
               <span className="tag"><svg viewBox="0 0 24 24"><use href="#ic-phone" /></svg>AI Receptionist</span>
               <span className="tag"><svg viewBox="0 0 24 24"><use href="#ic-star" /></svg>Tenant Management</span>
             </div>
-            <button className="mic-btn" aria-label="Voice input"><svg viewBox="0 0 24 24"><use href="#ic-wave" /></svg></button>
+            <button className="mic-btn" type="button" aria-label="Voice input"><svg viewBox="0 0 24 24"><use href="#ic-wave" /></svg></button>
           </div>
         </div>
 

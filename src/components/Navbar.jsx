@@ -1,13 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
-import { ROUTES, SECTIONS } from '../config/site'
+import { EXTERNAL, ROUTES, SECTIONS } from '../config/site'
 
 /**
- * Site nav. Markup mirrors the source 1:1 so the global stylesheet applies unchanged.
+ * Site nav. Markup mirrors the source 1:1 so the global stylesheet applies unchanged, except the
+ * CTA slot: at Umar's request this no longer links to the demo/contact section (the source's own
+ * design) — it's Sign In + Sign Up, pointing at the real Simplr product's own auth pages
+ * (https://www.simplr.pro/sign-in / /sign-up, confirmed live).
  *
- * The source's two pages actually have two DIFFERENT nav CTAs, not one shared nav:
- *  - index.html: "Try Demo" -> demo.html, plain .btn-black
- *  - demo.html:  "Book a Call" -> index.html#contact, .btn-black.btn-sm (smaller)
- * This component renders whichever one matches the current route.
+ * The two source pages actually defined different responsive breakpoints for this nav area
+ * (900/640/400px vs 760/460px — see the `.nav--demo` CSS in globals.css) even though it's one
+ * shared component; kept, since it's unrelated to which buttons render here.
  *
  * SECTIONS are in-page anchors on Home; from any other route (demo) they need to navigate back to
  * "/" first, so every link goes through react-router's <Link> to "/#id".
@@ -20,8 +22,8 @@ export default function Navbar() {
   return (
     <header className={onDemo ? 'nav nav--demo' : 'nav'} id="nav">
       <div className="nav-inner">
-        <Link to={`${ROUTES.home}#top`} className="logo" aria-label="LeaseOps home">
-          <img src="/Logo.png" alt="LeaseOps" />
+        <Link to={`${ROUTES.home}#top`} className="logo" aria-label="Simplr home">
+          <img src="/Logo.png" alt="Simplr" />
         </Link>
         <nav className="nav-links" id="navLinks">
           {SECTIONS.map((s) => (
@@ -31,16 +33,13 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="nav-actions">
-          {onDemo ? (
-            <Link to={`${ROUTES.home}#contact`} className="btn btn-black btn-sm">
-              Book a Call
-            </Link>
-          ) : (
-            <Link to={ROUTES.demo} className="btn btn-black">
-              Try Demo
-            </Link>
-          )}
-          <button className="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <a href={EXTERNAL.signIn} target="_blank" rel="noopener" className="btn btn-outline btn-sm">
+            Sign In
+          </a>
+          <a href={EXTERNAL.signUp} target="_blank" rel="noopener" className="btn btn-black btn-sm">
+            Sign Up
+          </a>
+          <button className="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu">
             <span></span>
           </button>
         </div>
