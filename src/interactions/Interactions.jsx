@@ -269,7 +269,13 @@ export default function Interactions() {
       })
         .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
         .then((result) => {
-          if (!result.ok) throw new Error((result.data && result.data.message) || 'Send failed')
+          // FormSubmit.co returns HTTP 200 even when it DIDN'T deliver the message (e.g. the
+          // "this form needs activation" case we hit in testing) — the real signal is the JSON
+          // body's own `success` field, not the HTTP status. Checking only `result.ok` (as the
+          // original source did) means a visitor can be told "message sent" while nothing arrives.
+          if (!result.ok || result.data?.success !== 'true') {
+            throw new Error((result.data && result.data.message) || 'Send failed')
+          }
           note.style.color = 'var(--green-text)'
           note.textContent = "Thanks, your message was sent. We'll get back to you soon."
           form.reset()
